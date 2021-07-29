@@ -111,17 +111,6 @@
             }
         },
 		{
-            "id": "stop-geth-node",
-            "label": "Stop Geth Node",
-            "description": "Stop any running Geth node in this instance.",
-            "type": "shell",
-            "command": "tmux kill-session -t geth",
-			"icon": {
-                "prefix": "fas",
-                "name": "stop-circle"
-            }
-        },
-		{
             "id": "start-bash-terminal",
             "label": "Bash Terminal",
             "description": "Open a Bash terminal",
