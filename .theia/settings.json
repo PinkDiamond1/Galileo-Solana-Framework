@@ -1,0 +1,116 @@
+{
+    "galileo.logo": "https://cryptologos.cc/logos/versions/ethereum-eth-logo-animated.gif?v=010",
+    "galileo.title": "Ethereum",
+    "galileo.description": "The foundation for our digital future.",
+    "galileo.widget_label": "Geth Portal",
+    "galileo.social_links": [
+        {
+        "icon": {
+            "prefix": "fab",
+            "name": "twitter"
+        },
+        "href": "https://twitter.com/vitalikbuterin",
+        "priority": 0
+        },
+        {
+        "icon": {
+            "prefix": "fab",
+            "name": "github"
+        },
+        "href": "https://github.com/ethereum/go-ethereum",
+        "priority": 1
+        }
+    ],
+    "galileo.ui_components": [
+        {
+        "type": "custom",
+        "title": "Ethereum Resources",
+        "content": [
+            {
+            "title": "🌎 Etherum Home Page",
+            "href": "https://ethereum.org/",
+            "priority": 0
+            },
+            {
+            "title": "📙 Developer Resources",
+            "href": "https://ethereum.org/en/developers/",
+            "priority": 1
+            },
+            {
+            "title": "🛸 Geth Node Guide",
+            "href": "https://geth.ethereum.org/docs/",
+            "priority": 2
+            },
+			{
+            "title": "👷‍♂️ Geth Dev Mode",
+            "href": "https://geth.ethereum.org/docs/getting-started/dev-mode",
+            "priority": 3
+            }
+        ]
+        },
+		{
+        "type": "custom",
+        "title": "Ethereum 2.0",
+        "content": [
+			{
+			"title": "🔥 Eth2 Clients",
+			"href": "https://ethereum.org/en/eth2/get-involved/#clients/",
+			"priority": 0
+			},
+			{
+			"title": "🦏 Ethereum 2.0 Launchpad",
+			"href": "https://launchpad.ethereum.org/",
+			"priority": 1
+			},
+			{
+			"title": "💸 Ethereum 2.0 Deposit CLI",
+			"href": "https://github.com/ethereum/eth2.0-deposit-cli/releases/", 
+			"priority": 2
+			}
+        ]
+        },
+		{
+        "type": "custom",
+        "title": "Solidity Language",
+        "content": [
+			{
+			"title": "🤓 Solidity Documentation",
+			"href": "https://docs.soliditylang.org/en/v0.8.5/",
+			"priority": 0
+			},
+			{
+			"title": "👷‍♂️ Hardhat Environment",
+			"href": "https://hardhat.org/",
+			"priority": 1
+			},
+			{
+			"title": "🍄 Truffle Environment",
+			"href": "https://www.trufflesuite.com/", 
+			"priority": 2
+			}
+        ]
+        },
+		{
+        "type": "custom",
+        "title": "Your API Endpoints",
+        "content": [
+			{
+			"title": "🔱 HTTP JSON-RPC",
+			"href": "/http/",
+			"priority": 0
+			},
+			{
+			"title": "👁‍🗨 Web Sockets",
+			"href": "/ws/",
+			"priority": 1
+			},
+			{
+			"title": "🕸 Graph QL UI",
+			"href": "/http/graphql/ui", 
+			"priority": 2
+			}
+        ]
+        }
+    ],
+    "workbench.colorTheme": "Galileo Light"
+}
