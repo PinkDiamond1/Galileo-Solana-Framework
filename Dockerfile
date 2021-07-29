@@ -45,21 +45,20 @@ ENV PATH $PATH:/usr/local/go/bin:/home/galileo:/home/galileo/.local/bin
 
 RUN useradd -ms /bin/bash galileo
 
-COPY .theia /home/galileo/.theia
-RUN chmod -R a+rwx /home/galileo/.theia
+COPY --chown=galileo .theia /home/galileo/.theia
 
 # get the Caddy server executable
 # copy the caddy server build into this container
-COPY --from=caddy-build /usr/bin/caddy /usr/bin/caddy
-COPY rclone.conf /home/galileo/.config/rclone/rclone.conf
-COPY Caddyfile /etc/
+COPY --from=caddy-build --chown=galileo /usr/bin/caddy /usr/bin/caddy
+COPY --chown=galileo rclone.conf /home/galileo/.config/rclone/rclone.conf
+COPY --chown=galileo Caddyfile /etc/
 
 # get the galileo IDE
 COPY --from=galileo-ide --chown=galileo /theia /home/galileo/.galileo-ide
 
 # set write permissions
-RUN chmod u+rwx /etc/Caddyfile
-RUN chmod -R u+rwx /home/galileo
+#RUN chmod u+rwx /etc/Caddyfile
+#RUN chmod -R u+rwx /home/galileo
 
 USER galileo
 WORKDIR /home/galileo/.galileo-ide
