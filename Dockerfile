@@ -54,11 +54,7 @@ COPY --chown=galileo rclone.conf /home/galileo/.config/rclone/rclone.conf
 COPY --chown=galileo Caddyfile /etc/
 
 # get the galileo IDE
-COPY --from=galileo-ide --chown=galileo /theia /home/galileo/.galileo-ide
-
-# set write permissions
-#RUN chmod u+rwx /etc/Caddyfile
-#RUN chmod -R u+rwx /home/galileo
+COPY --from=galileo-ide --chown=galileo /.galileo-ide /home/galileo/.galileo-ide
 
 USER galileo
 WORKDIR /home/galileo/.galileo-ide
@@ -75,10 +71,10 @@ ENV USE_LOCAL_GIT true
 ENV GALILEO_RESULTS_DIR /home/galileo
 
 # set login credentials and write them to text file
-ENV USERNAME "a"
-ENV PASSWORD "a"
-RUN echo "basicauth /* {" >> /tmp/hashpass.txt && \
-    echo "    {env.USERNAME}" $(caddy hash-password -plaintext $(echo $PASSWORD)) >> /tmp/hashpass.txt && \
-    echo "}" >> /tmp/hashpass.txt
+# ENV USERNAME "a"
+# ENV PASSWORD "a"
+# RUN echo "basicauth /* {" >> /tmp/hashpass.txt && \
+    # echo "    {env.USERNAME}" $(caddy hash-password -plaintext $(echo $PASSWORD)) >> /tmp/hashpass.txt && \
+    # echo "}" >> /tmp/hashpass.txt
 
 ENTRYPOINT ["sh", "-c", "supervisord"]
