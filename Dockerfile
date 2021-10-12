@@ -14,15 +14,12 @@ RUN apt update -y \
   && add-apt-repository -y ppa:ethereum/ethereum \ 
   && apt update -y \
   && apt install -y \
-    ethereum solc \
     supervisor kmod fuse\
     python3.8 python3-pip python3.8-dev \
     libsecret-1-dev \
 	vim curl tmux git zip unzip vim speedometer net-tools \
-  && python3.8 -m pip install web3 py-solc py-solc-x \
   && curl -fsSL https://deb.nodesource.com/setup_12.x | bash - \
   && apt install -y nodejs \
-  && npm install -g solc \
   && curl https://rclone.org/install.sh | bash \
   && rm -rf /var/lib/apt/lists/*
 
@@ -44,6 +41,9 @@ COPY --from=galileo-ide --chown=galileo /caddy/caddy /usr/bin/caddy
 COPY --from=galileo-ide --chown=galileo /caddy/header.html /etc/assets/header.html
 COPY --from=galileo-ide --chown=galileo /caddy/users.json /etc/gatekeeper/users.json
 COPY --from=galileo-ide --chown=galileo /caddy/auth.txt /etc/gatekeeper/auth.txt
+COPY --from=galileo-ide --chown=galileo /caddy/settings.template /etc/gatekeeper/assets/settings.template
+COPY --from=galileo-ide --chown=galileo /caddy/login.template /etc/gatekeeper/assets/login.template
+COPY --from=galileo-ide --chown=galileo /caddy/custom.css /etc/assets/custom.css
 COPY --chown=galileo rclone.conf /home/galileo/.config/rclone/rclone.conf
 COPY --chown=galileo Caddyfile /etc/
 
@@ -52,6 +52,9 @@ COPY --from=galileo-ide --chown=galileo /.galileo-ide /home/galileo/.galileo-ide
 
 USER galileo
 WORKDIR /home/galileo/.galileo-ide
+
+RUN sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+ENV PATH="/home/galileo/.local/share/solana/install/active_release/bin:${PATH}"
 
 # get supervisor configuration file
 COPY supervisord.conf /etc/

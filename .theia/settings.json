@@ -1,15 +1,15 @@
 {
-    "galileo.logo": "https://cryptologos.cc/logos/versions/ethereum-eth-logo-animated.gif?v=010",
-    "galileo.title": "Ethereum",
-    "galileo.description": "The foundation for our digital future.",
-    "galileo.widget_label": "Geth Portal",
+    "galileo.logo": "https://cryptologos.cc/logos/solana-sol-logo.png?v=014",
+    "galileo.title": "Solana",
+    "galileo.description": "Scale for global adoption.",
+    "galileo.widget_label": "Solana Portal",
     "galileo.social_links": [
         {
         "icon": {
             "prefix": "fab",
             "name": "twitter"
         },
-        "href": "https://twitter.com/vitalikbuterin",
+        "href": "https://twitter.com/solana",
         "priority": 0
         },
         {
@@ -17,14 +17,22 @@
             "prefix": "fab",
             "name": "github"
         },
-        "href": "https://github.com/ethereum/go-ethereum",
+        "href": "https://github.com/solana-labs/",
         "priority": 1
+        },
+		{
+        "icon": {
+            "prefix": "fab",
+            "name": "discord"
+        },
+        "href": "hhttps://discordapp.com/invite/pquxPsq",
+        "priority": 2
         }
     ],
     "galileo.ui_components": [
         {
         "type": "custom",
-        "title": "Ethereum Resources",
+        "title": "Solana Resources",
         "content": [
             {
             "title": "🌎 Etherum Home Page",
