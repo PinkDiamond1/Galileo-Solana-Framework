@@ -25,7 +25,7 @@
             "prefix": "fab",
             "name": "discord"
         },
-        "href": "hhttps://discordapp.com/invite/pquxPsq",
+        "href": "https://discordapp.com/invite/pquxPsq",
         "priority": 2
         }
     ],
@@ -35,65 +35,49 @@
         "title": "Solana Resources",
         "content": [
             {
-            "title": "🌎 Etherum Home Page",
-            "href": "https://ethereum.org/",
+            "title": "🌎 Solana Home Page",
+            "href": "https://solana.com/",
             "priority": 0
             },
             {
             "title": "📙 Developer Resources",
-            "href": "https://ethereum.org/en/developers/",
+            "href": "https://solana.com/developers",
             "priority": 1
             },
             {
-            "title": "🛸 Geth Node Guide",
-            "href": "https://geth.ethereum.org/docs/",
+            "title": "🛸 Node Guide",
+            "href": "https://docs.solana.com/running-validator",
             "priority": 2
             },
 			{
-            "title": "👷‍♂️ Geth Dev Mode",
-            "href": "https://geth.ethereum.org/docs/getting-started/dev-mode",
+            "title": "👨‍💻 Cluster Explorer",
+            "href": "https://explorer.solana.com/",
             "priority": 3
+            },
+			{
+            "title": "👩‍🎓 Economics",
+            "href": "https://geth.ethereum.org/docs/getting-started/dev-mode",
+            "priority": 4
             }
         ]
         },
 		{
         "type": "custom",
-        "title": "Ethereum 2.0",
+        "title": "Smart Contracts",
         "content": [
 			{
-			"title": "🔥 Eth2 Clients",
-			"href": "https://ethereum.org/en/eth2/get-involved/#clients/",
+			"title": "🤓 On-chain Programs",
+			"href": "https://docs.solana.com/developing/on-chain-programs/overview",
 			"priority": 0
 			},
 			{
-			"title": "🦏 Ethereum 2.0 Launchpad",
-			"href": "https://launchpad.ethereum.org/",
+			"title": "👷‍♂️ Command-line Guide",
+			"href": "https://docs.solana.com/cli",
 			"priority": 1
 			},
 			{
-			"title": "💸 Ethereum 2.0 Deposit CLI",
-			"href": "https://github.com/ethereum/eth2.0-deposit-cli/releases/", 
-			"priority": 2
-			}
-        ]
-        },
-		{
-        "type": "custom",
-        "title": "Solidity Language",
-        "content": [
-			{
-			"title": "🤓 Solidity Documentation",
-			"href": "https://docs.soliditylang.org/en/v0.8.5/",
-			"priority": 0
-			},
-			{
-			"title": "👷‍♂️ Hardhat Environment",
-			"href": "https://hardhat.org/",
-			"priority": 1
-			},
-			{
-			"title": "🍄 Truffle Environment",
-			"href": "https://www.trufflesuite.com/", 
+			"title": "🚀 Deploy a Program",
+			"href": "https://docs.solana.com/cli/deploy-a-program",
 			"priority": 2
 			}
         ]
