@@ -90,16 +90,6 @@
 			"title": "🔱 HTTP JSON-RPC",
 			"href": "/http/",
 			"priority": 0
-			},
-			{
-			"title": "👁‍🗨 Web Sockets",
-			"href": "/ws/",
-			"priority": 1
-			},
-			{
-			"title": "🕸 Graph QL UI",
-			"href": "/http/graphql/ui", 
-			"priority": 2
 			}
         ]
         }

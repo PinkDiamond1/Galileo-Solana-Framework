@@ -2,7 +2,7 @@
   <img src="https://github.com/GoHypernet/Galileo-Solana-Framework/blob/main/solana-logo.png" width="100">
 </p>
 
-# GETH
+# Solana
 
 ## Overview
 - **Industry**: Cryptocurrency, Ethereum

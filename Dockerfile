@@ -50,8 +50,14 @@ COPY --chown=galileo Caddyfile /etc/
 # get the galileo IDE
 COPY --from=galileo-ide --chown=galileo /.galileo-ide /home/galileo/.galileo-ide
 
+RUN npm install -g mocha && npm i -g @project-serum/anchor-cli
+
 USER galileo
 WORKDIR /home/galileo/.galileo-ide
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+ENV PATH="/home/galileo/.cargo/bin:${PATH}"
+RUN rustup component add rustfmt
 
 RUN sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 ENV PATH="/home/galileo/.local/share/solana/install/active_release/bin:${PATH}"
@@ -68,9 +74,9 @@ ENV USE_LOCAL_GIT true
 ENV GALILEO_RESULTS_DIR /home/galileo
 
 # set login credentials and write them to text file
-ENV USERNAME "a"
-ENV PASSWORD "a"
-RUN sed -i 's,"username": "","username": "'"$USERNAME"'",1' /etc/gatekeeper/users.json && \
-    sed -i 's,"hash": "","hash": "'"$(echo -n "$(echo $PASSWORD)" | bcrypt-cli -c 10 )"'",1' /etc/gatekeeper/users.json
+# ENV USERNAME "tnyugen+3@hypernetlabs.io"
+# ENV PASSWORD "a"
+# RUN sed -i 's,"username": "","username": "'"$USERNAME"'",1' /etc/gatekeeper/users.json && \
+    # sed -i 's,"hash": "","hash": "'"$(echo -n "$(echo $PASSWORD)" | bcrypt-cli -c 10 )"'",1' /etc/gatekeeper/users.json
 
 ENTRYPOINT ["sh", "-c", "supervisord"]
